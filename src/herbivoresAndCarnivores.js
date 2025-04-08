@@ -12,13 +12,13 @@ class Animal {
   static alive = [];
 
   static checkHealth() {
-    Animal.alive = Animal.alive.filter(animal => animal.health > 0);
+    Animal.alive = Animal.alive.filter((animal) => animal.health > 0);
   }
 }
 
 class Herbivore extends Animal {
   hide() {
-    this.hidden = !this.hidden;
+    this.hidden = true;
   }
 }
 
@@ -31,7 +31,6 @@ class Carnivore extends Animal {
     if (target.hidden) {
       return;
     }
-
     target.health -= 50;
     Animal.checkHealth();
   }
